@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+   <title>online store</title>
+<body>
+
+<h2>JavaScript Variables</h2>
+<p>The result of adding 5 + 2 + 3:</p>
+<p id="totalPrice"></p>
+<p id="test1"></p>
+
+<script>
+let tshirtCount = 5;
+let tshirtPrice = 400;
+let capCount = 3;
+let capPrice = 150;
+let totalPrice = (tshirtCount * tshirtPrice) + (capCount * capPrice);
+document.getElementById("totalPrice").innerHTML=totalPrice;
+tshirtPrice=450;
+totalPrice = (tshirtCount * tshirtPrice) + (capCount * capPrice);
+document.getElementById("totalPrice").innerHTML=totalPrice;
+
+</script>
+
+</body>
+</html>
