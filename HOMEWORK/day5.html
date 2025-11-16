@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Profile Access</title>
+</head>
+<body>
+  <h2>User Profile</h2>
+  <button onclick="checkAccess()"> Admin Access</button>
+  <p id="output"></p>
+
+  <script>
+    function checkAccess() {
+      const user = {
+        name: "Inshana",
+        age: 21,
+        isAdmin: true
+      };
+
+      const hasAge = 'age' in user;
+      console.log("Age property exists:", hasAge);
+      const result = (user.age >= 18 && user.isAdmin)
+        ? "Access Granted"
+        : "Access Denied";
+
+      document.getElementById("output").textContent = result;
+      delete user.age;
+
+      console.log("Updated user object:", user);
+    }
+  </script>
+</body>
+</html>

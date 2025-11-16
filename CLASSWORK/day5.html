@@ -1,25 +1,30 @@
-
 <!DOCTYPE html>
 <html>
+<head>
+  <title>Item Return Page</title>
+</head>
 <body>
+  <button onclick="checkReturnEligibility()">button</button>
+  <p id="result"></p>
 
-<p>Click the button to display the date.</p>
+  <script>
+    function checkReturnEligibility() {
+      const order = {
+        itemName: "Wireless Mouse",
+        isDelivered: true,
+        daysSinceDelivery: 5
+      };
+      const hasItemName = 'itemName' in order;
+      console.log("itemName exists:", hasItemName);
+      const message = (order.isDelivered && order.daysSinceDelivery <= 7)
+        ? "Eligible for Return"
+        : "Return Period Expired";
 
-<button onclick="displayDate()">The time is?</button>
+      document.getElementById("result").textContent = message;
+      delete order.daysSinceDelivery;
 
-<script lang=javascript type="text/javascript">
-   function displayDate() {
-  document.getElementById("demo").innerHTML = Date();
-}
-   let order{
-      itemName: "pupzz","lime";
-      isDelivered:"true" ;
-      daysSinceDelivery: 4;
-   }
-
-console.log(order);
-</script>
-
-
+      console.log("Updated order object:", order);
+    }
+  </script>
 </body>
-</html> 
+</html>
