@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array.forEach()</h2>
+
+
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+var fruits = ["Apple","orange", "banana"];
+var price = [50,30,75];
+fruits.push("watermelon");
+price.push(80);
+document.getElementById("demo").innerHTML =fruits;
+document.getElementById("demo1").innerHTML = "product: "+fruits[0]+"-"+ "Price:"+price[0];
+fLen = fruits.length;
+
+text = "<ul>";
+for (i = 0; i < fLen; i++) {
+  text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+document.getElementById("demo").innerHTML = text;
+
+let filteredProducts = price.filter( price > 50);
+document.getElementById("demo2").innerHTML=filteredProducts +""+price.length;
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+   <h2 >studentwho passed the exams</h2>
+   <p id="demo"></p>
+     <p id="demo1"></p>
+       <p id="demo2"></p>
+       <p id="demo3"></p>
+        <p id="demo4"></p>
+        <p id="demo5"></p>
+   <script>
+   const students = [
+      { name: "Alice", score: 75 },
+      { name: "Bob", score: 45 },
+      { name: "Charlie", score: 88 },
+      { name: "Diana", score: 55 },
+      { name: "Eve", score: 92 }
+   ];
+   let allNames = students.map(student => student.name);
+document.getElementById("demo").innerHTML=allNames;
+
+
+   const passedStudents = students .filter(student => student.score > 60)
+      .map(student => student.name);
+document.getElementById("demo1").innerHTML=passedStudents;
+
+let totalScore = students.reduce((sum, student) => sum + student.score, 0);
+document.getElementById("demo2").innerHTML="totalScore:"+totalScore;
+
+let allPassed = students.every(student => student.score > 35);
+document.getElementById("demo3").innerHTML="Did all students pass? "+allPassed;
+
+let topper = students.some(student => student.score > 90);
+document.getElementById("demo4").innerHTML="class topper :"+ topper;
+
+
+let sortedStudents = [...students].sort((a, b) => b.score - a.score);
+document.getElementById("demo5").innerHTML=sortedStudents.map(s => s.name +"-"+ s.score).join("<br>");
+
+   </script>
+   
+</body>
+</html>
